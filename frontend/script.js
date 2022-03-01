@@ -1,5 +1,8 @@
-function loadEvent(){
-    console.log('page is loaded');
-}
+// get data
 
-window.addEventListener("load", loadEvent);
+
+// prepare data - codewars- business logic
+
+// components = html elementds we would like to add the document later
+
+// render = add the cmponents to the document
