@@ -5,16 +5,14 @@ function init(){
     console.log(c);
     
     if(a < b){
-        function initC(){
+        (function (){
             var c = b - a;
-        }
-        initC();
+        })();
     }
     else{
-        function initC(){
+        (function (){
             var c = a - b;
-        }
-        initC();
+        })();
     }
     
     console.log(c);
