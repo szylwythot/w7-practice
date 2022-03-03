@@ -1,24 +1,20 @@
-function init(mathFunction){
-    var a = 5;
-    var b = 6;
-    
-    if(a < b){
-        let c = mathFunction(b, a);
-        console.log(c);
-    }
-    else{
-        let c = mathFunction(a, b);
-        console.log(c);
-    }
-    
+// events branch
+// egy form a jsből a htmlbe
+// "input" event
+// loggolja ki az értékét az input mezőnek
+
+function loadEvent(){
+
+    let rootElement = document.getElementById("root");
+    let formHtml =`
+    <form action="script.js">
+        <label for="inputLaber">Input:</label><br>
+        <input type="text" id="inputText" name="inputText" value=""><br>
+        <input type="submit" value="Submit">
+    </form> 
+    `;
+
+    rootElement.insertAdjacentHTML(`beforeend`, formHtml);
 }
 
-const initC = (firstNumber, secondNumber) => {
-    return firstNumber - secondNumber;
-}
-
-const initD = (firstNumber, secondNumber) => {
-    return firstNumber * secondNumber;
-}
-
-init(initD);
+window.addEventListener("load", loadEvent);
