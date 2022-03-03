@@ -1,28 +1,31 @@
-// events branch
-// egy form a jsből a htmlbe
-// "input" event
-// loggolja ki az értékét az input mezőnek
-
-function loadEvent(){
-
-    let rootElement = document.getElementById("root");
-    let formHtml =`
-    <form action="">
-        <label for="inputLaber">Input:</label><br>
-        <input type="text" id="inputText" name="inputText" value=""><br>
-        <!-- <input type="submit" value="Submit"> -->
-        <input type="submit" value="Submit">
+const form = () => {
+    return `
+    <form>
+        <div class="input1">
+            <input type="text" />
+        </div>
+        <div class="input2">
+            <input type="text" />
+        </div>
+        <div class="input3">
+            <input type="text" />
+        </div>
+        <button>Send</button>
     </form>
     `;
+};
 
-    rootElement.insertAdjacentHTML(`beforeend`, formHtml);
+function loadEvent() {
+console.log("load");
+const rootElement = document.getElementById("root")
 
-    const input = document.getElementById('inputText');
-    input.addEventListener('input', updateValue);
+rootElement.insertAdjacentHTML("beforeend", form())
 
-    function updateValue(e) {
+const inputList = document.querySelectorAll("input")
+for (const input of inputList) {
+    input.addEventListener("input", function(e) {
         console.log(e.target.value);
-    }
+    })
 }
-
+}
 window.addEventListener("load", loadEvent);
